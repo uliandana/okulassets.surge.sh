@@ -1,0 +1,24 @@
+{
+  "name": "okulassets.surge.sh",
+  "version": "1.0.0",
+  "description": "Backend of uliandana web",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server --cors -p8090"
+  },
+  "keywords": [],
+  "author": "Oka Uliandana",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uliandana/okulassets.surge.sh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uliandana/okulassets.surge.sh/issues"
+  },
+  "homepage": "https://github.com/uliandana/okulassets.surge.sh#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "http-server": "^0.10.0"
+  }
+}
