@@ -4,7 +4,9 @@
   "description": "Backend of uliandana web",
   "main": "index.js",
   "scripts": {
-    "start": "http-server --cors -p8090"
+    "start": "http-server --cors -p8090",
+    "build": "tsc",
+    "reading-list-all": "node ./dist/reading-list/test"
   },
   "keywords": [],
   "author": "Oka Uliandana",
@@ -19,6 +21,10 @@
   "homepage": "https://github.com/uliandana/okulassets.surge.sh#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "http-server": "^0.10.0"
+    "http-server": "^0.10.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0"
   }
 }

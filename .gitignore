@@ -1,4 +1,6 @@
 /node_modules
-/data/**
-/new-52/**
-/rebirth/**
+.env
+/dist
+/data
+/new-52
+/rebirth
