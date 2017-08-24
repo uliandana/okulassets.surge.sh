@@ -2,5 +2,4 @@
 .env
 /dist
 /data
-/new-52
-/rebirth
+/result

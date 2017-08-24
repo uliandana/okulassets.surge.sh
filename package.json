@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server --cors -p8090",
-    "build": "tsc",
-    "reading-list-all": "node ./dist/reading-list/test"
+    "build": "gulp build",
+    "reading-list": "node ./dist/reading-list/run generate"
   },
   "keywords": [],
   "author": "Oka Uliandana",
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/uliandana/okulassets.surge.sh#readme",
   "devDependencies": {
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-typescript": "^3.2.2",
     "http-server": "^0.10.0",
     "typescript": "^2.4.2"
   },
