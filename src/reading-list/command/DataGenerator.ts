@@ -15,6 +15,7 @@ export default class DataGenerator {
     private titleRef: string[];
     private series: Series[];
     private weeks: Week[];
+    private infoData: Info[];
     private oneshots: Series;
 
     constructor(category: string) {
@@ -23,6 +24,7 @@ export default class DataGenerator {
         this.titleRef = this.setReference();
         this.series = [];
         this.weeks = [];
+        this.infoData = [];
     }
 
     async generate() {
@@ -47,12 +49,15 @@ export default class DataGenerator {
             this.series.forEach((item) => {
                 item.startDate = item.issues[0].date;
                 item.totalIssues = item.issues.length;
-                jsonfile.writeFileSync(`${RESULT_DEST}/${this.categoryEncoded}/data/series/${Util.textEncode(item.title)}.json`, item, {spaces: 4})
+                this.infoData.push(new Info(item));
+                this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/series/${Util.textEncode(item.title)}.json`, item);
             });
     
             this.weeks.forEach((item) => {
-                jsonfile.writeFileSync(`${RESULT_DEST}/${this.categoryEncoded}/data/week/${item.date}.json`, item, {spaces: 4})
+                this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/week/${item.date}.json`, item);
             });
+
+            this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, { data: this.infoData });
         });
     }
 
@@ -103,6 +108,10 @@ export default class DataGenerator {
         }
         this.series[findIdx].issues.push(issue);
     }
+
+    private saveJson(dest: string, obj: any) {
+        jsonfile.writeFileSync(dest, obj, {spaces: 4})
+    }
 }
 
 export class TxtData {
@@ -112,5 +121,23 @@ export class TxtData {
     constructor(date: string) {
         this.date = date;
         this.lines = [];
+    }
+}
+
+export class Info {
+    title: string;
+    titleEncoded: string;
+    status: string;
+    startDate: string;
+    endDate: string;
+    totalIssues: number;
+
+    constructor(series: Series) {
+        this.title = series.title;
+        this.titleEncoded = Util.textEncode(series.title);
+        this.status = series.status;
+        this.startDate = series.startDate;
+        this.endDate = series.endDate;
+        this.totalIssues = series.totalIssues;
     }
 }

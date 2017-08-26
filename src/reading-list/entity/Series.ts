@@ -1,4 +1,3 @@
-// import EnvConfig from "../util/EnvConfig";
 import Issue from "./Issue";
 
 export default class Series {
