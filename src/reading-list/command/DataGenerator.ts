@@ -15,7 +15,8 @@ export default class DataGenerator {
     private titleRef: string[];
     private series: Series[];
     private weeks: Week[];
-    private infoData: Info[];
+    private infoSeries: Info[];
+    private infoWeek: string[];
     private oneshots: Series;
 
     constructor(category: string) {
@@ -24,13 +25,15 @@ export default class DataGenerator {
         this.titleRef = this.setReference();
         this.series = [];
         this.weeks = [];
-        this.infoData = [];
+        this.infoSeries = [];
+        this.infoWeek = [];
     }
 
     async generate() {
         let dataSrc: string = `${DATA_SOURCE}/${this.categoryEncoded}/`;
         let readTxts: any[] = [];
         fs.recurseSync(dataSrc, ["*.txt"], (filepath, relative, filename) => {
+            this.infoWeek.push(filename.replace(/\.txt$/, ""));
             readTxts.push(this.readTxt(filepath, filename));
         });
         
@@ -49,7 +52,7 @@ export default class DataGenerator {
             this.series.forEach((item) => {
                 item.startDate = item.issues[0].date;
                 item.totalIssues = item.issues.length;
-                this.infoData.push(new Info(item));
+                this.infoSeries.push(new Info(item));
                 this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/series/${Util.textEncode(item.title)}.json`, item);
             });
     
@@ -57,7 +60,7 @@ export default class DataGenerator {
                 this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/week/${item.date}.json`, item);
             });
 
-            this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, { data: this.infoData });
+            this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, { series: this.infoSeries, week: this.infoWeek });
         });
     }
 
