@@ -1,3 +1,4 @@
+require("dotenv").config();
 const app = require("./App").App;
 const param = process.argv[2];
 

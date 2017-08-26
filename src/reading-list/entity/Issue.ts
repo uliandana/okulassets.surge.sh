@@ -1,16 +1,16 @@
-import EnvConfig from "../config/EnvConfig";
+import Util from "../util/Util";
 
-export class Issue {
+export default class Issue {
     name: string;
     title: string;
     date: string;
     images: Images;
 
-    constructor(name:string) {
+    constructor(name:string, category: string) {
         this.name = name;
         this.title = "";
         this.date = "";
-        this.images = new Images();
+        this.images = new Images(name, category);
     }
 }
 
@@ -20,10 +20,10 @@ export class Images {
     sm: string;
     xs: string;
 
-    constructor() {
-        this.lg = "";
-        this.md = "";
-        this.sm = "";
-        this.xs = "";
+    constructor(name: string, category: string) {
+        this.lg = `${category}/image/lg/${Util.textEncode(name)}.jpg`;
+        this.md = `${category}/image/md/${Util.textEncode(name)}.jpg`;
+        this.sm = `${category}/image/sm/${Util.textEncode(name)}.jpg`;
+        this.xs = `${category}/image/xs/${Util.textEncode(name)}.jpg`;
     }
 }

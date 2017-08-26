@@ -1,16 +1,16 @@
-import EnvConfig from "../config/EnvConfig";
-import { Issue } from "./Issue";
+// import EnvConfig from "../util/EnvConfig";
+import Issue from "./Issue";
 
-export class Title {
-    name: string;
+export default class Series {
+    title: string;
     status: string;
     startDate: string;
     endDate: string;
     totalIssues: number;
     issues: Issue[];
 
-    constructor() {
-        this.name = "";
+    constructor(title: string) {
+        this.title = title;
         this.status = "";
         this.startDate = "";
         this.endDate = "";

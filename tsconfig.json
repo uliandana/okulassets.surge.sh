@@ -3,7 +3,11 @@
         "outDir": "./dist/",
         "rootDir": "./src/",
         "allowJs": true,
-        "target": "es5"
+        "target": "es5",
+        "lib": [
+            "es6",
+            "es2015"
+        ]
     },
     "include": [
         "./src/**/*"

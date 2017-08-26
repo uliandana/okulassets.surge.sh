@@ -1,13 +1,12 @@
-import EnvConfig from "../config/EnvConfig";
-import { Issue } from "./Issue";
+import Issue from "./Issue";
 
-export class Week {
+export default class Week {
     date: string;
     totalIssues: number;
     issues: Issue[];
 
-    constructor() {
-        this.date = "";
+    constructor(date: string) {
+        this.date = date;
         this.totalIssues = 0;
         this.issues = [];
     }
