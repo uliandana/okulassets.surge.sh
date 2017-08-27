@@ -1,13 +1,12 @@
 import { CATEGORIES } from "./util/EnvConfig";
 import DataGenerator from "./command/DataGenerator";
+import ImageGenerator from "./command/ImageGenerator";
 
 export class App {
     static generate() {
         CATEGORIES.forEach((item: string) => {
             App.generateData(item);
-            // App.generateImages(item);
         });
-        console.info("generated");
     }
 
     static generateData(category: string) {
@@ -15,9 +14,5 @@ export class App {
         dataGenerator.generate().then(() => {
             console.info(`${category} data generated`);
         });
-    }
-
-    static generateImages() {
-        // console.info("Images generated");
     }
 }
