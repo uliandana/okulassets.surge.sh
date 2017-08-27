@@ -4,7 +4,7 @@
   "description": "Backend of uliandana web",
   "main": "index.js",
   "scripts": {
-    "start": "http-server --cors -p8090",
+    "start": "cd result && http-server --cors -p8090",
     "build": "gulp build",
     "reading-list": "node ./dist/reading-list/run generate"
   },
