@@ -1,4 +1,4 @@
-import { DATA_SOURCE, RESULT_DEST } from "../util/EnvConfig";
+import { DATA_SOURCE, RESULT_DEST, ISSUE_PER_PAGE } from "../util/EnvConfig";
 import Issue from "../entity/Issue";
 import Series from "../entity/Series";
 import Week from "../entity/Week";
@@ -49,18 +49,9 @@ export default class DataGenerator {
 
         del(`${RESULT_DEST}/${this.categoryEncoded}/data/**/*.json`)
         .then(() => {
-            this.series.forEach((item) => {
-                item.startDate = item.issues[0].date;
-                item.totalIssues = item.issues.length;
-                this.infoSeries.push(new Info(item));
-                this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/series/${Util.textEncode(item.title)}.json`, item);
-            });
-    
-            this.weeks.forEach((item) => {
-                this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/week/${item.date}.json`, item);
-            });
-
-            this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, { series: this.infoSeries, week: this.infoWeek });
+            this.generateSeriesJson();
+            this.generateWeeksJson();
+            this.generateInfoJson();
         });
     }
 
@@ -110,6 +101,30 @@ export default class DataGenerator {
             this.oneshots.issues.push(issue);
         }
         this.series[findIdx].issues.push(issue);
+    }
+
+    private generateSeriesJson() {
+        this.series.forEach((item) => {
+            item.startDate = item.issues[0].date;
+            item.totalIssues = item.issues.length;
+            item.totalPages = Math.ceil(item.totalIssues / ISSUE_PER_PAGE);
+            for (let idx = 1; idx <= item.totalPages; idx++) {
+                let idxSliceStart = ISSUE_PER_PAGE * (idx - 1);
+                let idxSliceEnd = ISSUE_PER_PAGE * idx;
+                this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/series/${Util.textEncode(item.title)}-${idx}.json`, Series.clone(item, idx, item.issues.slice(idxSliceStart, idxSliceEnd)));
+            }
+            this.infoSeries.push(new Info(item));
+        });
+    }
+
+    private generateWeeksJson() {
+        this.weeks.forEach((item) => {
+            this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/week/${item.date}.json`, item);
+        });
+    }
+
+    private generateInfoJson() {
+        this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, { series: this.infoSeries, week: this.infoWeek });
     }
 
     private saveJson(dest: string, obj: any) {

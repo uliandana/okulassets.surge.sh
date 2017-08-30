@@ -1,6 +1,5 @@
 import { CATEGORIES } from "./util/EnvConfig";
 import DataGenerator from "./command/DataGenerator";
-import ImageGenerator from "./command/ImageGenerator";
 
 export class App {
     static generate() {
