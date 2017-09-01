@@ -1,4 +1,5 @@
 import { DATA_SOURCE, RESULT_DEST, ISSUE_PER_PAGE } from "../util/EnvConfig";
+import CategoryInfo from "../entity/CategoryInfo"
 import Issue from "../entity/Issue";
 import Series from "../entity/Series";
 import Week from "../entity/Week";
@@ -15,7 +16,7 @@ export default class DataGenerator {
     private titleRef: string[];
     private series: Series[];
     private weeks: Week[];
-    private infoSeries: Info[];
+    private infoSeries: CategoryInfo[];
     private infoWeek: string[];
     private oneshots: Series;
 
@@ -113,7 +114,7 @@ export default class DataGenerator {
                 let idxSliceEnd = ISSUE_PER_PAGE * idx;
                 this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/series/${Util.textEncode(item.title)}-${idx}.json`, Series.clone(item, idx, item.issues.slice(idxSliceStart, idxSliceEnd)));
             }
-            this.infoSeries.push(new Info(item));
+            this.infoSeries.push(new CategoryInfo(item));
         });
     }
 
@@ -139,23 +140,5 @@ export class TxtData {
     constructor(date: string) {
         this.date = date;
         this.lines = [];
-    }
-}
-
-export class Info {
-    title: string;
-    titleEncoded: string;
-    status: string;
-    startDate: string;
-    endDate: string;
-    totalIssues: number;
-
-    constructor(series: Series) {
-        this.title = series.title;
-        this.titleEncoded = Util.textEncode(series.title);
-        this.status = series.status;
-        this.startDate = series.startDate;
-        this.endDate = series.endDate;
-        this.totalIssues = series.totalIssues;
     }
 }
