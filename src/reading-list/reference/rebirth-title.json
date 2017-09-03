@@ -1,39 +1,144 @@
 {
     "data": [
-        "Oneshots",
-        "Action Comics",
-        "All Star Batman",
-        "Aquaman",
-        "Batgirl",
-        "Batgirl and the Birds of Prey",
-        "Batman",
-        "Batman Beyond",
-        "Batwoman",
-        "Blue Beetle",
-        "Cyborg",
-        "Dark Nights: Metal",
-        "Deathstroke",
-        "Detective Comics",
-        "Green Arrow",
-        "Green Lanterns",
-        "Hal Jordan and the Green Lantern Corps",
-        "Harley Quinn",
-        "Justice League",
-        "Justice League of America",
-        "Justice League vs. Suicide Squad",
-        "New Super-Man",
-        "Nightwing",
-        "Red Hood and the Outlaws",
-        "Suicide Squad",
-        "Super Sons",
-        "Supergirl",
-        "Superman",
-        "Superwoman",
-        "Teen Titans",
-        "The Flash",
-        "The Hellblazer",
-        "Titans",
-        "Trinity",
-        "Wonder Woman"
+        {
+            "title": "Oneshots",
+            "status": "ongoing"
+        },
+        {
+            "title": "Action Comics",
+            "status": "ongoing"
+        },
+        {
+            "title": "All Star Batman",
+            "status": "ongoing"
+        },
+        {
+            "title": "Aquaman",
+            "status": "ongoing"
+        },
+        {
+            "title": "Batgirl",
+            "status": "ongoing"
+        },
+        {
+            "title": "Batgirl and the Birds of Prey",
+            "status": "ongoing"
+        },
+        {
+            "title": "Batman",
+            "status": "ongoing"
+        },
+        {
+            "title": "Batman Beyond",
+            "status": "ongoing"
+        },
+        {
+            "title": "Batwoman",
+            "status": "ongoing"
+        },
+        {
+            "title": "Blue Beetle",
+            "status": "ongoing"
+        },
+        {
+            "title": "Cyborg",
+            "status": "ongoing"
+        },
+        {
+            "title": "Dark Nights: Metal",
+            "status": "ongoing"
+        },
+        {
+            "title": "Deathstroke",
+            "status": "ongoing"
+        },
+        {
+            "title": "Detective Comics",
+            "status": "ongoing"
+        },
+        {
+            "title": "Green Arrow",
+            "status": "ongoing"
+        },
+        {
+            "title": "Green Lanterns",
+            "status": "ongoing"
+        },
+        {
+            "title": "Hal Jordan and the Green Lantern Corps",
+            "status": "ongoing"
+        },
+        {
+            "title": "Harley Quinn",
+            "status": "ongoing"
+        },
+        {
+            "title": "Justice League",
+            "status": "ongoing"
+        },
+        {
+            "title": "Justice League of America",
+            "status": "ongoing"
+        },
+        {
+            "title": "Justice League vs. Suicide Squad",
+            "status": "completed"
+        },
+        {
+            "title": "New Super-Man",
+            "status": "ongoing"
+        },
+        {
+            "title": "Nightwing",
+            "status": "ongoing"
+        },
+        {
+            "title": "Red Hood and the Outlaws",
+            "status": "ongoing"
+        },
+        {
+            "title": "Suicide Squad",
+            "status": "ongoing"
+        },
+        {
+            "title": "Super Sons",
+            "status": "ongoing"
+        },
+        {
+            "title": "Supergirl",
+            "status": "ongoing"
+        },
+        {
+            "title": "Superman",
+            "status": "ongoing"
+        },
+        {
+            "title": "Superwoman",
+            "status": "ongoing"
+        },
+        {
+            "title": "Teen Titans",
+            "status": "ongoing"
+        },
+        {
+            "title": "The Flash",
+            "status": "ongoing"
+        },
+        {
+            "title": "The Hellblazer",
+            "status": "ongoing"
+        },
+        {
+            "title": "Titans",
+            "status": "ongoing"
+        },
+        {
+            "title": "Trinity",
+            "status": "ongoing"
+        },
+        {
+            "title": "Wonder Woman",
+            "status": "ongoing"
+        }
     ]
 }

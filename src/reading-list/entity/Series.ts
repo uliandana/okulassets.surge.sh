@@ -2,7 +2,7 @@ import Issue from "./Issue";
 
 export default class Series {
     title: string;
-    status: string;
+    status: "ongoing" | "completed" | "incomplete";
     startDate: string;
     endDate: string;
     totalIssues: number;
@@ -11,9 +11,9 @@ export default class Series {
     issuesThisPage: number;
     issues: Issue[];
 
-    constructor(title: string) {
+    constructor(title: string, status: "ongoing" | "completed" | "incomplete") {
         this.title = title;
-        this.status = "";
+        this.status = status;
         this.startDate = "";
         this.endDate = "";
         this.totalIssues = 0;
@@ -24,7 +24,7 @@ export default class Series {
     }
 
     static clone(series: Series, page: number, issues: Issue[]) {
-        let retval = new Series(series.title);
+        let retval = new Series(series.title, series.status);
         retval.status = series.status;
         retval.startDate = series.startDate;
         retval.endDate = series.endDate;

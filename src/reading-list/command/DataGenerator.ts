@@ -13,12 +13,11 @@ const del = require("del");
 export default class DataGenerator {
     private category: string;
     private categoryEncoded: string;
-    private titleRef: string[];
+    private titleRef: { title: string, status: "ongoing" | "completed" | "incomplete" }[];
     private series: Series[];
     private weeks: Week[];
     private infoSeries: CategoryInfo[];
     private infoWeek: string[];
-    private oneshots: Series;
 
     constructor(category: string) {
         this.category = category;
@@ -41,7 +40,7 @@ export default class DataGenerator {
         let txtDatas: TxtData[] = await Promise.all(readTxts);
         
         this.titleRef.forEach((item) => {
-            this.series.push(new Series(item));
+            this.series.push(new Series(item.title, item.status));
         });
 
         txtDatas.forEach((item) => {
@@ -91,22 +90,19 @@ export default class DataGenerator {
         if (text.match(' - ')) text = text.split(' - ')[0];
         if (text.match(/ Special$/)) text = text.replace(/ Special$/g, '');
 
-        if (this.titleRef.findIndex((ref) => { return ref == text}) != -1) retval = text;
+        if (this.titleRef.findIndex((ref) => { return ref.title == text}) != -1) retval = text;
         return retval;
     }
 
     private addIssueToSeries(issue: Issue) {
         let findIdx = this.series.findIndex((item) => { return item.title == issue.title});
-        if (findIdx == -1) {
-            if (!this.oneshots) this.oneshots = new Series("Oneshots");
-            this.oneshots.issues.push(issue);
-        }
         this.series[findIdx].issues.push(issue);
     }
 
     private generateSeriesJson() {
         this.series.forEach((item) => {
             item.startDate = item.issues[0].date;
+            item.endDate = item.status == "completed" ? item.issues[item.issues.length - 1].date : "";
             item.totalIssues = item.issues.length;
             item.totalPages = Math.ceil(item.totalIssues / ISSUE_PER_PAGE);
             for (let idx = 1; idx <= item.totalPages; idx++) {

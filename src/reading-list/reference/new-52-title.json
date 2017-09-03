@@ -1,56 +1,212 @@
 {
     "data": [
-        "Action Comics",
-        "All-Star Western",
-        "Animal Man",
-        "Aquaman",
-        "Batgirl",
-        "Batman",
-        "Batman and Robin",
-        "Batman: The Dark Knight",
-        "Batwing",
-        "Batwoman",
-        "Birds of Prey",
-        "Blackhawks",
-        "Blue Beetle",
-        "Captain Atom",
-        "Catwoman",
-        "DC Universe Presents",
-        "Deathstroke",
-        "Demon Knights",
-        "Detective Comics",
-        "Frankenstein, Agent of S.H.A.D.E",
-        "Green Arrow",
-        "Green Lantern",
-        "Green Lantern Corps",
-        "Green Lantern: New Guardians",
-        "Grifter",
-        "Hawk and Dove",
-        "I, Vampire",
-        "Justice League",
-        "Justice League Dark",
-        "Justice League International",
-        "Legion Lost",
-        "Legion of Super-Heroes",
-        "Men of War",
-        "Mister Terrific",
-        "Nightwing",
-        "O.M.A.C",
-        "Red Hood and the Outlaws",
-        "Red Lanterns",
-        "Resurrection Man",
-        "Static Shock",
-        "Stormwatch",
-        "Suicide Squad",
-        "Superboy",
-        "Supergirl",
-        "Superman",
-        "Swamp Thing",
-        "Teen Titans",
-        "The Flash",
-        "The Fury of Firestorm: The Nuclear Men",
-        "The Savage Hawkman",
-        "Voodoo",
-        "Wonder Woman"
+        {
+            "title": "Action Comics",
+            "status": "incomplete"
+        },
+        {
+            "title": "All-Star Western",
+            "status": "incomplete"
+        },
+        {
+            "title": "Animal Man",
+            "status": "incomplete"
+        },
+        {
+            "title": "Aquaman",
+            "status": "incomplete"
+        },
+        {
+            "title": "Batgirl",
+            "status": "incomplete"
+        },
+        {
+            "title": "Batman",
+            "status": "incomplete"
+        },
+        {
+            "title": "Batman and Robin",
+            "status": "incomplete"
+        },
+        {
+            "title": "Batman: The Dark Knight",
+            "status": "incomplete"
+        },
+        {
+            "title": "Batwing",
+            "status": "incomplete"
+        },
+        {
+            "title": "Batwoman",
+            "status": "incomplete"
+        },
+        {
+            "title": "Birds of Prey",
+            "status": "incomplete"
+        },
+        {
+            "title": "Blackhawks",
+            "status": "completed"
+        },
+        {
+            "title": "Blue Beetle",
+            "status": "incomplete"
+        },
+        {
+            "title": "Captain Atom",
+            "status": "incomplete"
+        },
+        {
+            "title": "Catwoman",
+            "status": "incomplete"
+        },
+        {
+            "title": "DC Universe Presents",
+            "status": "incomplete"
+        },
+        {
+            "title": "Deathstroke",
+            "status": "incomplete"
+        },
+        {
+            "title": "Demon Knights",
+            "status": "incomplete"
+        },
+        {
+            "title": "Detective Comics",
+            "status": "incomplete"
+        },
+        {
+            "title": "Frankenstein, Agent of S.H.A.D.E",
+            "status": "incomplete"
+        },
+        {
+            "title": "Green Arrow",
+            "status": "incomplete"
+        },
+        {
+            "title": "Green Lantern",
+            "status": "incomplete"
+        },
+        {
+            "title": "Green Lantern Corps",
+            "status": "incomplete"
+        },
+        {
+            "title": "Green Lantern: New Guardians",
+            "status": "incomplete"
+        },
+        {
+            "title": "Grifter",
+            "status": "incomplete"
+        },
+        {
+            "title": "Hawk and Dove",
+            "status": "completed"
+        },
+        {
+            "title": "I, Vampire",
+            "status": "incomplete"
+        },
+        {
+            "title": "Justice League",
+            "status": "incomplete"
+        },
+        {
+            "title": "Justice League Dark",
+            "status": "incomplete"
+        },
+        {
+            "title": "Justice League International",
+            "status": "incomplete"
+        },
+        {
+            "title": "Legion Lost",
+            "status": "incomplete"
+        },
+        {
+            "title": "Legion of Super-Heroes",
+            "status": "incomplete"
+        },
+        {
+            "title": "Men of War",
+            "status": "completed"
+        },
+        {
+            "title": "Mister Terrific",
+            "status": "completed"
+        },
+        {
+            "title": "Nightwing",
+            "status": "incomplete"
+        },
+        {
+            "title": "O.M.A.C",
+            "status": "completed"
+        },
+        {
+            "title": "Red Hood and the Outlaws",
+            "status": "incomplete"
+        },
+        {
+            "title": "Red Lanterns",
+            "status": "incomplete"
+        },
+        {
+            "title": "Resurrection Man",
+            "status": "incomplete"
+        },
+        {
+            "title": "Static Shock",
+            "status": "completed"
+        },
+        {
+            "title": "Stormwatch",
+            "status": "incomplete"
+        },
+        {
+            "title": "Suicide Squad",
+            "status": "incomplete"
+        },
+        {
+            "title": "Superboy",
+            "status": "incomplete"
+        },
+        {
+            "title": "Supergirl",
+            "status": "incomplete"
+        },
+        {
+            "title": "Superman",
+            "status": "incomplete"
+        },
+        {
+            "title": "Swamp Thing",
+            "status": "incomplete"
+        },
+        {
+            "title": "Teen Titans",
+            "status": "incomplete"
+        },
+        {
+            "title": "The Flash",
+            "status": "incomplete"
+        },
+        {
+            "title": "The Fury of Firestorm: The Nuclear Men",
+            "status": "incomplete"
+        },
+        {
+            "title": "The Savage Hawkman",
+            "status": "incomplete"
+        },
+        {
+            "title": "Voodoo",
+            "status": "incomplete"
+        },
+        {
+            "title": "Wonder Woman",
+            "status": "incomplete"
+        }
     ]
 }
