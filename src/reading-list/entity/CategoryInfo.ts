@@ -1,7 +1,16 @@
 import Series from "./Series"
 import Util from "../util/Util"
 
-export default class CategoryInfo {
+export class CategoryInfo {
+    series: InfoSeries[];
+    week: InfoWeek[];
+
+    constructor(series: InfoSeries[], week: InfoWeek[]) {
+        this.series = series;
+        this.week = week;
+    }
+}
+export class InfoSeries {
     title: string;
     titleEncoded: string;
     status: string;
@@ -16,5 +25,17 @@ export default class CategoryInfo {
         this.startDate = series.startDate;
         this.endDate = series.endDate;
         this.totalIssues = series.totalIssues;
+    }
+}
+
+export class InfoWeek {
+    year: number;
+    month: number;
+    date: number;
+
+    constructor(date: string) {
+        this.year = parseInt(date.split("-")[0]);
+        this.month = parseInt(date.split("-")[1]);
+        this.date = parseInt(date.split("-")[2]);
     }
 }

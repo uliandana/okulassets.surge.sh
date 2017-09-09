@@ -1,5 +1,5 @@
 import { DATA_SOURCE, RESULT_DEST, ISSUE_PER_PAGE } from "../util/EnvConfig";
-import CategoryInfo from "../entity/CategoryInfo"
+import { CategoryInfo, InfoSeries, InfoWeek } from "../entity/CategoryInfo"
 import Issue from "../entity/Issue";
 import Series from "../entity/Series";
 import Week from "../entity/Week";
@@ -16,8 +16,8 @@ export default class DataGenerator {
     private titleRef: { title: string, status: "ongoing" | "completed" | "incomplete" }[];
     private series: Series[];
     private weeks: Week[];
-    private infoSeries: CategoryInfo[];
-    private infoWeek: string[];
+    private infoSeries: InfoSeries[];
+    private infoWeek: InfoWeek[];
 
     constructor(category: string) {
         this.category = category;
@@ -33,7 +33,7 @@ export default class DataGenerator {
         let dataSrc: string = `${DATA_SOURCE}/${this.categoryEncoded}/`;
         let readTxts: any[] = [];
         fs.recurseSync(dataSrc, ["*.txt"], (filepath, relative, filename) => {
-            this.infoWeek.push(filename.replace(/\.txt$/, ""));
+            this.infoWeek.push(new InfoWeek(filename.replace(/\.txt$/, "")));
             readTxts.push(this.readTxt(filepath, filename));
         });
         
@@ -110,7 +110,7 @@ export default class DataGenerator {
                 let idxSliceEnd = ISSUE_PER_PAGE * idx;
                 this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/series/${Util.textEncode(item.title)}-${idx}.json`, Series.clone(item, idx, item.issues.slice(idxSliceStart, idxSliceEnd)));
             }
-            this.infoSeries.push(new CategoryInfo(item));
+            this.infoSeries.push(new InfoSeries(item));
         });
     }
 
@@ -121,7 +121,7 @@ export default class DataGenerator {
     }
 
     private generateInfoJson() {
-        this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, { series: this.infoSeries, week: this.infoWeek });
+        this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, new CategoryInfo(this.infoSeries, this.infoWeek));
     }
 
     private saveJson(dest: string, obj: any) {
