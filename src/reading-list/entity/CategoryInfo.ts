@@ -2,10 +2,12 @@ import Series from "./Series"
 import Util from "../util/Util"
 
 export class CategoryInfo {
+    category: string;
     series: InfoSeries[];
     week: InfoWeek[];
 
-    constructor(series: InfoSeries[], week: InfoWeek[]) {
+    constructor(category: string, series: InfoSeries[], week: InfoWeek[]) {
+        this.category = category;
         this.series = series;
         this.week = week;
     }

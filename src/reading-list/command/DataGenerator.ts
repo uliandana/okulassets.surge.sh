@@ -121,7 +121,7 @@ export default class DataGenerator {
     }
 
     private generateInfoJson() {
-        this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, new CategoryInfo(this.infoSeries, this.infoWeek));
+        this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/info.json`, new CategoryInfo(this.category, this.infoSeries, this.infoWeek));
     }
 
     private saveJson(dest: string, obj: any) {
