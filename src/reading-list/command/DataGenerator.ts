@@ -32,8 +32,10 @@ export default class DataGenerator {
     async generate() {
         let dataSrc: string = `${DATA_SOURCE}/${this.categoryEncoded}/`;
         let readTxts: any[] = [];
+        let datesFromTxt: string[] = [];
+
         fs.recurseSync(dataSrc, ["*.txt"], (filepath, relative, filename) => {
-            this.infoWeek.push(new InfoWeek(filename.replace(/\.txt$/, "")));
+            datesFromTxt.push(filename.replace(/\.txt$/, ""));
             readTxts.push(this.readTxt(filepath, filename));
         });
         
@@ -46,6 +48,8 @@ export default class DataGenerator {
         txtDatas.forEach((item) => {
             this.parseIssues(item);
         });
+
+        this.infoWeek = InfoWeek.buildFromDatesArray(datesFromTxt);
 
         del(`${RESULT_DEST}/${this.categoryEncoded}/data/**/*.json`)
         .then(() => {

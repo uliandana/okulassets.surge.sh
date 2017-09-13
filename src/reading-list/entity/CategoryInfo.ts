@@ -12,6 +12,7 @@ export class CategoryInfo {
         this.week = week;
     }
 }
+
 export class InfoSeries {
     title: string;
     titleEncoded: string;
@@ -31,13 +32,47 @@ export class InfoSeries {
 }
 
 export class InfoWeek {
-    year: number;
-    month: number;
-    date: number;
+    year: string;
+    months: { month: string; dates: string[] }[];
 
-    constructor(date: string) {
-        this.year = parseInt(date.split("-")[0]);
-        this.month = parseInt(date.split("-")[1]);
-        this.date = parseInt(date.split("-")[2]);
+    constructor(year: string) {
+        this.year = year;
+        this.months = [];
+    }
+
+    static buildFromDatesArray(dateArray: string[]): InfoWeek[] {
+        let retval: InfoWeek[] = [];
+        let infoWeek: InfoWeek;
+        let monthObj: { month: string; dates: string[] };
+        let year: string = "";
+        let prevYear: string = "";
+        let month: string = "";
+        let prevMonth: string = "";
+        let date: string = "";
+
+        dateArray.forEach((item: string, idx: number) => {
+            year = item.split("-")[0];
+            month = item.split("-")[1];
+            date = item.split("-")[2];
+
+            if (month !== prevMonth) {
+                if (idx !== 0) infoWeek.months.push(monthObj);
+                monthObj = { month: month, dates: [] }
+            }
+            
+            if (year !== prevYear) {
+                if (idx !== 0) retval.push(infoWeek);
+                infoWeek = new InfoWeek(year);
+            }
+
+            monthObj.dates.push(date);
+
+            prevMonth = month;
+            prevYear = year;
+        });
+
+        infoWeek.months.push(monthObj);
+        retval.push(infoWeek);
+        return retval;
     }
 }
