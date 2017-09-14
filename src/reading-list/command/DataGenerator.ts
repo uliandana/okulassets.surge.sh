@@ -89,7 +89,7 @@ export default class DataGenerator {
 
     private titleFromReference(text: string) {
         let retval = "Oneshots";
-        if (text.match(/ [0-9\/\s(of)]*$/)) text = text.replace(/ [0-9\/\s(of)]*$/g, '');
+        if (text.match(/( [0-9]* of)? [0-9]*$/)) text = text.replace(/( [0-9]* of)? [0-9]*$/g, '');
         if (text.match(/ Annual$/)) text = text.replace(/ Annual$/g, '');
         if (text.match(' - ')) text = text.split(' - ')[0];
         if (text.match(/ Special$/)) text = text.replace(/ Special$/g, '');

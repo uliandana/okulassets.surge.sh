@@ -77,7 +77,19 @@
             "status": "incomplete"
         },
         {
+            "title": "Dial H",
+            "status": "incomplete"
+        },
+        {
+            "title": "Earth 2",
+            "status": "incomplete"
+        },
+        {
             "title": "Frankenstein, Agent of S.H.A.D.E",
+            "status": "incomplete"
+        },
+        {
+            "title": "G.I. Combat",
             "status": "incomplete"
         },
         {
@@ -206,6 +218,10 @@
         },
         {
             "title": "Wonder Woman",
+            "status": "incomplete"
+        },
+        {
+            "title": "Worlds' Finest",
             "status": "incomplete"
         }
     ]
