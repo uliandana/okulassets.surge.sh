@@ -1,7 +1,9 @@
 import Issue from "./Issue";
+import Util from "../util/Util";
 
 export default class Series {
     title: string;
+    titleEncoded: string;
     status: "ongoing" | "completed" | "incomplete";
     startDate: string;
     endDate: string;
@@ -13,6 +15,7 @@ export default class Series {
 
     constructor(title: string, status: "ongoing" | "completed" | "incomplete") {
         this.title = title;
+        this.titleEncoded = Util.textEncode(title);
         this.status = status;
         this.startDate = "";
         this.endDate = "";
