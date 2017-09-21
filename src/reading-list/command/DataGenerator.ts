@@ -77,8 +77,9 @@ export default class DataGenerator {
     private parseIssues(txtData: TxtData) {
         let newWeek: Week = new Week(txtData.date);
         txtData.lines.forEach((line) => {
-            let issue: Issue = new Issue(line, this.categoryEncoded);
+            let issue: Issue = new Issue(line, this.category);
             issue.title = this.titleFromReference(line);
+            issue.titleEncoded = Util.textEncode(issue.title);
             issue.date = txtData.date;
             newWeek.issues.push(issue);
             this.addIssueToSeries(issue);
