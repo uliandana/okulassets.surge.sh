@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cd result && http-server --cors -p8090",
     "build": "gulp build",
-    "reading-list": "node ./dist/reading-list/run generate && node ./dist/reading-list/run latest-issues"
+    "reading-list": "node ./dist/reading-list/run generate && node ./dist/reading-list/run latest-issues",
+    "surge": "cd result && surge"
   },
   "keywords": [],
   "author": "Oka Uliandana",

@@ -105,9 +105,19 @@ export default class DataGenerator {
     }
 
     private generateSeriesJson() {
-        this.series.forEach((item) => {
+        this.series.forEach((item, idx) => {
             item.startDate = item.issues[0].date;
             item.endDate = item.status == "completed" ? item.issues[item.issues.length - 1].date : "";
+
+            if (idx > 0) {
+                item.prevTitle = this.series[idx - 1].title;
+                item.prevTitleEncoded = this.series[idx - 1].titleEncoded;
+            }
+            if (idx < this.series.length - 1) {
+                item.nextTitle = this.series[idx + 1].title;
+                item.nextTitleEncoded = this.series[idx + 1].titleEncoded;
+            }
+
             item.totalIssues = item.issues.length;
             item.totalPages = Math.ceil(item.totalIssues / ISSUE_PER_PAGE);
             for (let idx = 1; idx <= item.totalPages; idx++) {
@@ -120,7 +130,9 @@ export default class DataGenerator {
     }
 
     private generateWeeksJson() {
-        this.weeks.forEach((item) => {
+        this.weeks.forEach((item, idx) => {
+            if (idx > 0) item.prevDate = this.weeks[idx - 1].date;
+            if (idx < this.weeks.length - 1) item.nextDate = this.weeks[idx + 1].date;
             this.saveJson(`${RESULT_DEST}/${this.categoryEncoded}/data/week/${item.date}.json`, item);
         });
     }

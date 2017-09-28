@@ -12,6 +12,10 @@ export default class Series {
     totalPages: number;
     issuesThisPage: number;
     issues: Issue[];
+    prevTitle: string;
+    prevTitleEncoded: string;
+    nextTitle: string;
+    nextTitleEncoded: string;
 
     constructor(title: string, status: "ongoing" | "completed" | "incomplete") {
         this.title = title;
@@ -24,6 +28,10 @@ export default class Series {
         this.totalPages = 1;
         this.issuesThisPage = 0;
         this.issues = [];
+        this.prevTitle = "";
+        this.prevTitleEncoded = "";
+        this.nextTitle = "";
+        this.nextTitleEncoded = "";
     }
 
     static clone(series: Series, page: number, issues: Issue[]) {
@@ -36,6 +44,10 @@ export default class Series {
         retval.totalPages = series.totalPages;
         retval.issuesThisPage = issues.length;
         retval.issues = issues;
+        retval.prevTitle = series.prevTitle;
+        retval.prevTitleEncoded = series.prevTitleEncoded;
+        retval.nextTitle = series.nextTitle;
+        retval.nextTitleEncoded = series.nextTitleEncoded;
         return retval;
     }
 }
