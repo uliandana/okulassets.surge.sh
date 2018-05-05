@@ -10,7 +10,7 @@
         },
         {
             "title": "All Star Batman",
-            "status": "ongoing"
+            "status": "completed"
         },
         {
             "title": "Aquaman",
@@ -29,6 +29,10 @@
             "status": "ongoing"
         },
         {
+            "title": "Batman and the Signal",
+            "status": "completed"
+        },
+        {
             "title": "Batman Beyond",
             "status": "ongoing"
         },
@@ -37,16 +41,24 @@
             "status": "ongoing"
         },
         {
+            "title": "Black Lightning: Cold, Dead Hands",
+            "status": "completed"
+        },
+        {
             "title": "Blue Beetle",
-            "status": "ongoing"
+            "status": "completed"
         },
         {
             "title": "Cyborg",
             "status": "ongoing"
         },
         {
-            "title": "Dark Nights: Metal",
+            "title": "Damage",
             "status": "ongoing"
+        },
+        {
+            "title": "Dark Nights: Metal",
+            "status": "completed"
         },
         {
             "title": "Death of Hawkman",
@@ -93,11 +105,15 @@
             "status": "completed"
         },
         {
+            "title": "Mera: Queen of Atlantis",
+            "status": "ongoing"
+        },
+        {
             "title": "Mister Miracle",
             "status": "ongoing"
         },
         {
-            "title": "New Super-Man",
+            "title": "New Super-Man and the Justice League of China",
             "status": "ongoing"
         },
         {
@@ -105,7 +121,19 @@
             "status": "ongoing"
         },
         {
+            "title": "Ragman",
+            "status": "completed"
+        },
+        {
+            "title": "Raven: Daughter of Darkness",
+            "status": "ongoing"
+        },
+        {
             "title": "Red Hood and the Outlaws",
+            "status": "ongoing"
+        },
+        {
+            "title": "Sideways",
             "status": "ongoing"
         },
         {
@@ -126,11 +154,23 @@
         },
         {
             "title": "Superwoman",
-            "status": "ongoing"
+            "status": "completed"
         },
         {
             "title": "Teen Titans",
             "status": "ongoing"
+        },
+        {
+            "title": "The Brave and the Bold: Batman and Wonder Woman",
+            "status": "ongoing"
+        },
+        {
+            "title": "The Curse of Brimstone",
+            "status": "ongoing"
+        },
+        {
+            "title": "The Demon: Hell is Earth",
+            "status": "completed"
         },
         {
             "title": "The Flash",
@@ -138,6 +178,18 @@
         },
         {
             "title": "The Hellblazer",
+            "status": "ongoing"
+        },
+        {
+            "title": "The Immortal Men",
+            "status": "ongoing"
+        },
+        {
+            "title": "The Silencer",
+            "status": "ongoing"
+        },
+        {
+            "title": "The Terrifics",
             "status": "ongoing"
         },
         {

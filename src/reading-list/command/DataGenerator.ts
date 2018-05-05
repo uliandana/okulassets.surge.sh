@@ -94,6 +94,7 @@ export default class DataGenerator {
         if (text.match(/ Annual$/)) text = text.replace(/ Annual$/g, '');
         if (text.match(' - ')) text = text.split(' - ')[0];
         if (text.match(/ Special$/)) text = text.replace(/ Special$/g, '');
+        if (text == 'New Super-Man') text = 'New Super-Man and the Justice League of China';
 
         if (this.titleRef.findIndex((ref) => { return ref.title == text}) != -1) retval = text;
         return retval;
@@ -106,6 +107,7 @@ export default class DataGenerator {
 
     private generateSeriesJson() {
         this.series.forEach((item, idx) => {
+            if (item.issues.length == 0) return '';
             item.startDate = item.issues[0].date;
             item.endDate = item.status == "completed" ? item.issues[item.issues.length - 1].date : "";
 

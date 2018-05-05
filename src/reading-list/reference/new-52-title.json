@@ -1,6 +1,10 @@
 {
     "data": [
         {
+            "title": "Oneshots",
+            "status": "incomplete"
+        },
+        {
             "title": "Action Comics",
             "status": "incomplete"
         },
@@ -42,6 +46,26 @@
         },
         {
             "title": "Batwoman",
+            "status": "incomplete"
+        },
+        {
+            "title": "Before Watchmen: Comedian",
+            "status": "incomplete"
+        },
+        {
+            "title": "Before Watchmen: Minutemen",
+            "status": "incomplete"
+        },
+        {
+            "title": "Before Watchmen: Nite Owl",
+            "status": "incomplete"
+        },
+        {
+            "title": "Before Watchmen: Ozymandias",
+            "status": "incomplete"
+        },
+        {
+            "title": "Before Watchmen: Silk Spectre",
             "status": "incomplete"
         },
         {
