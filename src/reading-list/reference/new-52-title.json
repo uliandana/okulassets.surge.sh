@@ -53,6 +53,10 @@
             "status": "incomplete"
         },
         {
+            "title": "Before Watchmen: Dr. Manhattan",
+            "status": "incomplete"
+        },
+        {
             "title": "Before Watchmen: Minutemen",
             "status": "incomplete"
         },
@@ -62,6 +66,10 @@
         },
         {
             "title": "Before Watchmen: Ozymandias",
+            "status": "incomplete"
+        },
+        {
+            "title": "Before Watchmen: Rorschach",
             "status": "incomplete"
         },
         {
@@ -82,7 +90,7 @@
         },
         {
             "title": "Captain Atom",
-            "status": "incomplete"
+            "status": "completed"
         },
         {
             "title": "Catwoman",
@@ -158,7 +166,7 @@
         },
         {
             "title": "Justice League International",
-            "status": "incomplete"
+            "status": "completed"
         },
         {
             "title": "Legion Lost",
@@ -194,7 +202,7 @@
         },
         {
             "title": "Resurrection Man",
-            "status": "incomplete"
+            "status": "completed"
         },
         {
             "title": "Static Shock",
@@ -225,6 +233,14 @@
             "status": "incomplete"
         },
         {
+            "title": "Sword of Sorcery",
+            "status": "incomplete"
+        },
+        {
+            "title": "Team 7",
+            "status": "incomplete"
+        },
+        {
             "title": "Teen Titans",
             "status": "incomplete"
         },
@@ -237,6 +253,10 @@
             "status": "incomplete"
         },
         {
+            "title": "The Phantom Stranger",
+            "status": "incomplete"
+        },
+        {
             "title": "The Ravagers",
             "status": "incomplete"
         },
@@ -246,7 +266,7 @@
         },
         {
             "title": "Voodoo",
-            "status": "incomplete"
+            "status": "completed"
         },
         {
             "title": "Wonder Woman",
